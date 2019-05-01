@@ -1,0 +1,8 @@
+<h1>create your post here</h1>
+
+<div class='barberpost'>
+<%= form_with(model: @post) do |f| %>
+<p><%=f.text_field :post,placeholder: 'write your post here' %></p>
+<%= f.submit 'post' %>
+<%end%>
+</div>

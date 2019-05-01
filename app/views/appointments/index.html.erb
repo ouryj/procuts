@@ -1,0 +1,19 @@
+<h1>Welcome to procuts barber shop </h1>
+<div class='msg'>
+  <h3>message from barber</h3>
+  <% @posts.each do |p| %>
+  <%if p.user.profile.attached? %>
+  <p><%= image_tag(p.user.profile,style:"border-radius:75%;height:75px;width:75px")%> <em><%=p.user.name %></em>
+  <%end%>
+  <%= p.post %> </p>
+  <%end%>
+
+</div>
+ 
+<div class='render'>
+   <% @appointments.each do |a| %>
+   <P>Name: <%= a.name %> Day: <%=a.date.strftime("%m-%d-%Y") %> Time: <%= a.time.strftime(" %I:%M%P") %> Phone: 
+   <%=number_to_phone(a.phone,area_code: true) %>
+   </P>
+   <% end %>
+</div>
