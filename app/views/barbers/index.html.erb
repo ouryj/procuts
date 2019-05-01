@@ -23,6 +23,7 @@
 
 if you wana send a post 
 <%= link_to 'send a post', new_barber_path %>
+<div class='container'>
 <div class='post'>
    <h4>my posts</h4>
    <% @posts.each do |p| %>
@@ -36,8 +37,9 @@ if you wana send a post
 <div class='render'>
    <% @appointments.each do |a| %>
    <P>Name: <%= a.name %> Day: <%=a.date.strftime("%m-%d-%Y") %> Time: <%= a.time.strftime(" %I:%M%P") %> Phone: 
-   <%=number_to_phone(a.phone,area_code: true) %>
+   <%=tel_link  number_to_phone(a.phone,area_code: true) %>
    </P>
    <%= link_to 'Delete appointment', appointment_path(a),method: :delete %>
    <% end %>
+</div>
 </div>
