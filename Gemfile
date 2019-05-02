@@ -62,3 +62,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'tel_link_rails'
+gem 'aws-sdk-s3', '~> 1.36', '>= 1.36.1'

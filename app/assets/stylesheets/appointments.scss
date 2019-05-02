@@ -5,13 +5,16 @@
   background-color: #480BAA;
   
 }
-a{
+.nav{
    text-decoration: none; color: white;
    margin: 20px;
 }
 a:hover{
-    color: red;
+    color: blue;
 }
+// a:visited{
+//     color: 
+// }
 nav{
     text-align: center;
 }
@@ -22,17 +25,57 @@ header{
     color: white; font-family: Georgia, 'Times New Roman', Times, serif;
 }
 // body{
-//     background-color: #D90368;
+//     background-image: image-url('barber1.jpg')
 // }
 .render{
     width: 400px;
 }
-.container, .form{
-    width: 500px; background-color: #6DAEDB; color: white;
+.container, .form, .barberpost{
+    width: 500px; background-color: #6DAEDB; color: white; margin-left: 500px;
+    
 }
  .name{
      width:250px; height: 20px;
 }
-#btn{
+#btn,#post{
     width: 100px; 
+}
+.img{
+    height: 300px;
+    width: 300px;
+}
+.body{
+    display: inline-flex; margin-top: 20px;
+}
+a {
+    color: orangered;
+}
+.delete{
+    color: red;
+}
+.work{
+    float: right;
+}
+.photo{
+    display: inline-flex; background-color:#6DAEDB; color: white; 
+}
+.footer {
+    background-color:gainsboro; color: darkslategray;
+}
+.copy {
+    font-size: 80%;
+}
+@media all and (max-width: 450px){
+    body {
+      
+        width: 400px;
+        height: 800px;
+    }
+    .body{
+        display: inline-table; 
+    }
+    .container, .form, .barberpost {
+        width: 375px;
+    }
+
 }

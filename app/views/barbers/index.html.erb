@@ -1,4 +1,4 @@
-
+<div class='container'>
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -17,29 +17,32 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
-<% if current_user.profile.attached? %>
-<%= image_tag(current_user.profile, style:"border-radius:75%; height:100px; width:100px") %>
+<%if current_user.profile.attached? %>
+  <%= image_tag(current_user.profile, style:"border-radius:75%; height:100px; width:100px") %>
 <%end%>
 
-if you wana send a post 
-<%= link_to 'send a post', new_barber_path %>
-<div class='container'>
+<p>would you like to send an update ?</p> 
+<%= link_to 'update clients ', new_barber_path %>
+
 <div class='post'>
-   <h4>my posts</h4>
+   <h4>my updates</h4>
    <% @posts.each do |p| %>
    <p><%=p.post %></p>
-   <%=link_to 'delete post', barber_path(p), method: :delete %>
+   <%=link_to 'delete update', barber_path(p), method: :delete,class:'delete' %>
    <%end%>
 
 </div>
 <h1>below are your appointments</h1>
-
+<ol>
 <div class='render'>
+
    <% @appointments.each do |a| %>
-   <P>Name: <%= a.name %> Day: <%=a.date.strftime("%m-%d-%Y") %> Time: <%= a.time.strftime(" %I:%M%P") %> Phone: 
-   <%=tel_link  number_to_phone(a.phone,area_code: true) %>
-   </P>
-   <%= link_to 'Delete appointment', appointment_path(a),method: :delete %>
+   <li><P>Name: <%= a.name %> Day: <%=a.date.strftime("%m-%d-%Y") %> Time: <%= a.time.strftime(" %I:%M%P") %> Phone: 
+   <%=tel_link  number_to_phone(a.phone,area_code: true ,class:'number') %>
+   </P> </li>
+   <%= link_to 'End Appointment',appointment_path(a),method: :delete , class:'delete' %>
    <% end %>
+
 </div>
+</ol>
 </div>

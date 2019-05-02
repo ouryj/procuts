@@ -12,12 +12,12 @@
   <body>
   <div class='heade'>
   <header>
-  <h1 id='head'>Welcome to Procuts Where best Barbers are found in the Bx</h1>
+  <h1 id='head'>Welcome to ProCuts Presented to you by Clarkie</h1>
   </header>
   <nav>
-    <%= link_to 'Home',appointments_path %>
-    <%= link_to 'Appointments', new_appointment_path %>
-    <%= link_to 'Barber', barbers_path %>
+    <%= link_to 'Home',appointments_path, class:'nav' %>
+    <%= link_to 'Appointments', new_appointment_path, class:'nav' %>
+    <%= link_to 'Barber', barbers_path, class:'nav' %>
   </nav>
   </div>
 
@@ -25,6 +25,11 @@
 
 
 
-    <%= yield %>
+    <%= yield %> 
+    <hr>
+    <footer class='footer'>
+      <p class='copy'>Copyright © 2019 ProCuts inc. all right reserved | location:
+      1442 E. Gun Hill rd, Bx,NY,10469 | Contact:347-275-8870 | email:procuts@optimum.net</p>
+    </footer>
   </body>
 </html>
